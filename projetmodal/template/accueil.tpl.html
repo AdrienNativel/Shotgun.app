@@ -1,0 +1,19 @@
+<div class="container text-center mt-5">
+    <button id="creerShotgun" class="btn btn-primary">Créer un shotgun</button>
+</div>
+<div class="container text-center mt-5">
+    <button id="participer" class="btn btn-secondary">Participer</button>
+</div>
+<!--Redirection vers les pages adaptées-->
+<script>
+    $(document).ready(function () {
+        var creerShotgun = document.getElementById('creerShotgun')
+        creerShotgun.addEventListener('click', function () {
+            window.location.hash = 'seConnecter';
+        });
+        var participer = document.getElementById('participer');
+        participer.addEventListener('click', function () {
+            window.location.hash = 'sg';
+        });
+    });
+</script>

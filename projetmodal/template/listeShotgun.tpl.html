@@ -1,0 +1,42 @@
+<div class="accordion" id="tpl-home">
+  {{#.}}
+  <div class="accordion-item">
+    <div class="accordion-header gr">
+      <button class="accordion-button collapsed ab" type="button" style="font-size:125%;" data-bs-toggle="collapse"
+        data-bs-target="#collapse{{nomsg}}" aria-expanded="true" aria-controls="collapse{{nomsg}}">{{nombinet}} -
+        {{nomsg}}</button>
+    </div>
+    <div id="collapse{{nomsg}}" class="accordion-collapse collapse" data-bs-parent="#tpl-home">
+      <div class="accordion-body">
+        <div>
+          {{description}}
+        </div>
+        <div class="mt-3">
+          Le shotgun ouvre le {{date}} à {{heure}}
+        </div>
+        <div>
+          <!--On envoie le code du shotgun pour pouvoir déterminer si le shotgun concerné est ouvert ou non-->
+          <a class="btn btn-primary gr mt-2" href="#connexion"
+            onclick="sessionStorage.setItem('codeShotgun', '{{nomsg}}');" class="gr white"
+            style="text-decoration:none">Tenter le shotgun</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/.}}
+</div>
+<!--Cas où le shotgun n'est pas encore ouvert-->
+<div class="modal fade" id="myModal3" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Accès shotgun</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBodyContent">
+        Revenez plus tard !
+      </div>
+
+    </div>
+  </div>
+</div>
